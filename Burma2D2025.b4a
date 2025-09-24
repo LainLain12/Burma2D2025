@@ -1,0 +1,1306 @@
+﻿Build1=Default,com.burma.royal2d
+File1=afacad-bold.ttf
+File10=frm_item1.bal
+File11=frm_main.bal
+File12=giftbtn.webp
+File13=gp.png
+File14=gridpages.bal
+File15=increase.png
+File16=lg.jpg
+File17=lg.webp
+File18=lgr.json
+File19=livee.json
+File2=burma2d_logo.webp
+File20=loading.json
+File21=login.json
+File22=loginr.json
+File23=logor.webp
+File24=peace.json
+File25=pholder.webp
+File26=placeholder.webp
+File27=privacy_policy.html
+File28=profile_bg.png
+File29=profile_bg.webp
+File3=card.bal
+File30=ptsans-regular.ttf
+File31=PYIDAUNGSU-2.5.3_REGULAR.TTF
+File32=Vecteezy-License-Information.pdf
+File33=viewpager.bal
+File34=vp.bal
+File35=wb.png
+File36=zoomimageview.bal
+File4=dmsans-bold.ttf
+File5=DMSans-ExtraBold.ttf
+File6=DMSans-Light.ttf
+File7=DMSans-Regular.ttf
+File8=DMSans-SemiBold.ttf
+File9=emiji.json
+FileGroup1=Default Group
+FileGroup10=Default Group
+FileGroup11=Default Group
+FileGroup12=Default Group
+FileGroup13=Default Group
+FileGroup14=Default Group
+FileGroup15=Default Group
+FileGroup16=Default Group
+FileGroup17=Default Group
+FileGroup18=Default Group
+FileGroup19=Default Group
+FileGroup2=Default Group
+FileGroup20=Default Group
+FileGroup21=Default Group
+FileGroup22=Default Group
+FileGroup23=Default Group
+FileGroup24=Default Group
+FileGroup25=Default Group
+FileGroup26=Default Group
+FileGroup27=Default Group
+FileGroup28=Default Group
+FileGroup29=Default Group
+FileGroup3=Default Group
+FileGroup30=Default Group
+FileGroup31=Default Group
+FileGroup32=Default Group
+FileGroup33=Default Group
+FileGroup34=Default Group
+FileGroup35=Default Group
+FileGroup36=Default Group
+FileGroup4=Default Group
+FileGroup5=Default Group
+FileGroup6=Default Group
+FileGroup7=Default Group
+FileGroup8=Default Group
+FileGroup9=Default Group
+Group=Default Group
+Library1=amir_glide
+Library10=firebaseauth
+Library11=firebasenotifications
+Library12=ime
+Library13=javaobject
+Library14=json
+Library15=okhttputils2
+Library16=phone
+Library17=reflection
+Library18=runtimepermissions
+Library19=stringutils
+Library2=appcompat
+Library20=xcustomlistview
+Library21=xui
+Library22=as_cardslider
+Library3=asviewpager
+Library4=axrlottie
+Library5=b4xpages
+Library6=contentresolver
+Library7=core
+Library8=firebaseadmob2
+Library9=firebaseanalytics
+ManifestCode=	'This code will be applied to the manifest file during compilation.~\n~	'You do not need to modify it in most cases.~\n~	'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~	AddManifestText(~\n~	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="36"/>~\n~	<supports-screens android:largeScreens="true" ~\n~	    android:normalScreens="true" ~\n~	    android:smallScreens="true" ~\n~	    android:anyDensity="true"/>)~\n~	SetApplicationAttribute(android:icon, "@drawable/icon")~\n~	SetApplicationAttribute(android:label, "$LABEL$")~\n~~\n~	SetApplicationAttribute(android:theme, "@style/DarkStatusBarTheme")~\n~	'	SetApplicationAttribute(android:theme, "@style/LightTheme")~\n~	CreateResource(values, theme.xml,~\n~	<resources>~\n~	<style~\n~	    name="DarkStatusBarTheme" parent="@android:style/Theme.Material.Light">~\n~	   <item name="android:statusBarColor">#000000</item>~\n~	   <item name="android:actionMenuTextAppearance">@style/LowerCaseMenu</item>~\n~	   <item name="android:windowOptOutEdgeToEdgeEnforcement">true</item>~\n~	   <item name="android:navigationBarColor">#140c1f</item>~\n~	</style>~\n~	   <style name="LowerCaseMenu" parent="android:TextAppearance.Material.Widget.ActionBar.Menu">~\n~	   <item name="android:textAllCaps">false</item>~\n~	</style>~\n~	</resources>~\n~	)~\n~~\n~'	SetApplicationAttribute(android:theme, "@style/LightTheme")~\n~'CreateResource(values, theme.xml,~\n~'<resources>~\n~'    <style~\n~'        name="LightTheme" parent="@android:style/Theme.Material.Light">~\n~'       <item name="android:actionMenuTextAppearance">@style/LowerCaseMenu</item>~\n~'       <item name="android:windowOptOutEdgeToEdgeEnforcement">true</item>~\n~'	   <item name="android:navigationBarColor">#140c1f</item>~\n~'    </style>~\n~'     <style name="LowerCaseMenu" parent="android:TextAppearance.Material.Widget.ActionBar.Menu">~\n~'        <item name="android:textAllCaps">false</item>~\n~'    </style>~\n~'</resources>~\n~')~\n~	~\n~	SetApplicationAttribute(android:usesCleartextTraffic, "true")~\n~~\n~'	SetApplicationAttribute(android:theme,"@style/AppTheme")~\n~'	CreateResource(values,styles.xml,~\n~'	<resources>~\n~'	    <style name="AppTheme" parent="Theme.AppCompat.Light">~\n~'	        <item name="colorAccent">#721c30</item>~\n~'	        <item name="windowNoTitle">true</item>~\n~'	        <item name="windowActionBar">false</item>~\n~'			<item name="android:navigationBarColor">#140c1f</item>~\n~'			~\n~'	    </style>~\n~'	</resources>)~\n~~\n~	SetActivityAttribute(main, android:windowSoftInputMode, adjustResize|stateHidden)~\n~	CreateResourceFromFile(Macro, Core.NetworkClearText)~\n~	SetApplicationAttribute(android:networkSecurityConfig, @xml/network_security_config)~\n~	CreateResource(xml, network_security_config.xml,~\n~	<network-security-config>~\n~	<base-config cleartextTrafficPermitted="true">~\n~	    <trust-anchors>~\n~	        <certificates src="system" />~\n~	    </trust-anchors>~\n~	</base-config>~\n~	</network-security-config>)~\n~~\n~~\n~	AddPermission(android.permission.INTERNET)~\n~	AddPermission(android.permission.WAKE_LOCK)~\n~	AddPermission(com.google.android.c2dm.permission.RECEIVE)~\n~	AddPermission(${applicationId}.permission.C2D_MESSAGE)~\n~~\n~	CreateResourceFromFile(Macro, FirebaseAdMob.FirebaseAds)~\n~	~\n~~\n~		CreateResourceFromFile(Macro, FirebaseAnalytics.GooglePlayBase)~\n~	CreateResourceFromFile(Macro, FirebaseAnalytics.Firebase)~\n~	CreateResourceFromFile(Macro, FirebaseAnalytics.FirebaseAnalytics)~\n~	CreateResourceFromFile(Macro, FirebaseNotifications.FirebaseNotifications)~\n~	CreateResourceFromFile(Macro, FirebaseAuth.FirebaseAuth)~\n~	AddReplacement($ADMOB_APP_ID$, ca-app-pub-3867841157350558~1339477688)~\n~	~\n~'AddManifestText(~\n~'<service android:name="anywheresoftware.b4a.samples.starter"~\n~'    android:enabled="true"~\n~'    android:exported="false"~\n~'    android:foregroundServiceType="dataSync" />~\n~')~\n~~\n~AddApplicationText(~\n~    <service~\n~        android:name="com.burma.royal2d.starter"~\n~        android:enabled="true"~\n~        android:exported="false"~\n~        android:foregroundServiceType="dataSync" />~\n~)~\n~	'End of default text.~\n~
+Module1=AdsHelper
+Module10=history
+Module11=LiveUtils
+Module12=Login
+Module13=LottoHistory
+Module14=lottosociety
+Module15=mycode
+Module16=Privacy_Policy
+Module17=Profile_Activity
+Module18=public_chat
+Module19=report_details
+Module2=ApiCall
+Module20=setholidays
+Module21=settings
+Module22=sseconnector
+Module23=Starter
+Module24=store
+Module25=threed
+Module3=B4XMainPage
+Module4=chatsseconnector
+Module5=FirebaseMessaging
+Module6=Future_Tips
+Module7=gift_activity
+Module8=gift_imageview
+Module9=GuideLine
+NumberOfFiles=36
+NumberOfLibraries=22
+NumberOfModules=25
+Version=13.35
+@EndOfDesignText@
+#Region  Project Attributes 
+	#ApplicationLabel: Burma 2D
+	#VersionCode: 14
+	#VersionName: 2.1.4
+	#MultiDex: true
+
+	#SupportedOrientations: portrait
+	#CanInstallToExternalStorage: False
+#End Region
+
+#MultiDex: True
+#Region  Activity Attributes 
+	#FullScreen: False
+	#IncludeTitle: false
+#End Region
+#AdditionalJar: com.google.android.ump:user-messaging-platform
+'#BridgeLogger: True
+#BridgeLogger: true
+
+Sub Process_Globals
+	Dim fututerpaper As String = "futurepaper"
+	Dim adErrorCode As String
+'	Dim tbannerUnit As String = "ca-app-pub-3940256099942544/6300978111"
+'	Dim tinterUnit As String="ca-app-pub-3940256099942544/1033173712"
+'	Dim trwinterunit As String  = "	ca-app-pub-3940256099942544/5354046379"
+	Dim bannerUnit As String="ca-app-pub-3867841157350558/8640750180"
+	Dim interUnit As String = "ca-app-pub-3867841157350558/8756385975"
+	Dim rwinterUnit As String= "ca-app-pub-3867841157350558/8544392708"
+	Dim smallbannerunit As String = "ca-app-pub-3867841157350558/4004567803"
+	Dim sse As sseconnector
+	Dim newsite As String = "https://app.shwemyanmar2d.us/" 
+	Dim keypresscount As Int
+	Dim dwe As AXrLottieDrawableBuilder
+	Dim mipnheingt As Int
+	 Dim bannerheight As Int 
+	 Dim bannertop As Int
+	 Dim lottoscoiety As String = "lottosociety"
+	 Dim histroyact As String ="history"
+ 	Dim threedact As String = "threed"
+ 	Dim publicChat As String = "publichat"
+ 	Dim changetimer As Timer
+	Dim site As String = "https://shwemyanmar2d.us/"
+	Dim inforeader As String = "inforeader"
+	Dim livereader As String = "livereader"
+	Dim changelean As Boolean = False
+	Dim changelean As Boolean = False
+	Dim isAdReceive As Boolean = False
+	Dim nextactivity As String
+	Dim isCLosed As Boolean 
+	Dim navpanelheight As Int 
+	Dim fbi As FirebaseAnalytics
+	Dim isCall As Boolean
+	Dim showCustomMsg As Boolean =False
+
+	Dim phone As Phone
+
+End Sub
+
+Sub Globals
+
+	Dim xui As XUI
+	Dim settingbtn As Button
+	Dim AXrLottie As AXrLottie
+	Dim LottieView As AXrLottieImageView
+	Dim logo As ImageView
+
+	Dim ads As AdsHelper
+	Dim pn As Panel
+		Dim banner As AdView
+		Dim versionlb As Label
+		Dim morningresultlb,eveningresultlb As Label
+		Dim barpn,livepn As Panel
+		Dim livelb As Label
+		Dim timelb As Label
+		Dim morningresultpn,eveningresultpn As Panel
+		Dim mdevider,edevider As Panel
+		Dim mtimelb,etimelb As Label
+		Dim splashscreen As Panel
+		Dim mainscv As ScrollView
+		Dim inter As InterstitialAd
+		Dim chatbtn As Button
+	Dim ltw As AXrLottieImageView
+		Dim lottobtn As Button
+	Dim nmodernlb,ninternetlb,tmodernlb,tinternetlb As Label
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	mycode.checkActivityHeihgt(100%y)
+
+'	pmain.Initialize("")
+'	Dim allheight As String ="allheight:"& mycode.ActivityHeight
+'	Dim statusbar As String = "status:"&mycode.GetStatusBarHeight
+'	Dim safearea As String = "safearea:"&mycode.GetSafeAreaHeight
+'	Dim navh As String = "navi:"&GetNavigationBarHeight
+'	Msgbox(allheight&CRLF&safearea&CRLF&statusbar&navh,"data")
+
+	
+	If FirstTime = True Then
+		mycode.CreateNotificationChannel
+	End If
+	DateTime.SetTimeZone(6.5)
+	Wait For (CheckAndRequestNotificationPermission) Complete (HasPermission As Boolean)
+	If HasPermission = False Then
+		Log("no permission")
+		ToastMessageShow("no permission", True)
+	End If
+	Sleep(0)
+	
+	checkinfo
+
+
+	fbi.Initialize
+	fbi.SendEvent("login", CreateMap ("additional parameter": 100))
+	CallSubDelayed2(FirebaseMessaging, "SubscribeToTopics", Array("general"))
+
+	mycode.SETnavigationcolor
+	
+	Activity.Color=mycode.bgColor
+	
+	Dim appbar As Panel = mycode.appbar("BURMA 2D",True)
+	Activity.AddView(appbar,0,mycode.appbartop,100%x,mycode.appbarheight)
+	chatbtn.Initialize("chatbtn")
+	chatbtn.Text= buttoncsb(False,Chr(0xF1D7),True)
+	chatbtn.Background=mycode.btnbg(False)
+	appbar.AddView(chatbtn,(100%x-(mycode.appbarheight+10dip)),0,mycode.appbarheight,mycode.appbarheight)
+	
+	lottobtn.Initialize("lottobtn")
+	lottobtn.Text= buttoncsb(False,Chr(0xF080),True)
+	lottobtn.Background=mycode.btnbg(False)
+	appbar.AddView(lottobtn,chatbtn.Left-(mycode.appbarheight-5dip),0,mycode.appbarheight,mycode.appbarheight)
+	
+	settingbtn.Initialize("settingbtn")
+	settingbtn.Text= buttoncsb(False,Chr(0xF013),True)
+	settingbtn.Background=mycode.btnbg(False)
+	appbar.AddView(settingbtn,lottobtn.Left-(mycode.appbarheight-5dip),0,mycode.appbarheight,mycode.appbarheight)
+	
+	
+	mainscv.Initialize(1000dip)
+	Activity.AddView(mainscv,0,mycode.appbarheight,100%x,mycode.ActivityHeight-(navpanelheight+5dip+mycode.appbarheight))
+	Sleep(0)
+	barpn.Initialize("")
+	barpn.SetBackgroundImage(LoadBitmap(File.DirAssets,"profile_bg.png"))
+	mainscv.Panel.AddView(barpn,0,0,100%x,40%x)
+	
+	
+	livepn.Initialize("")
+	livepn.Elevation=10dip
+	mainscv.Panel.AddView(livepn,0,10dip,100dip,100dip)
+	Sleep(0)
+	
+	Dim AXrLottie As AXrLottie
+	AXrLottie.Initialize
+	ltw.Initialize("")
+	dwe.InitializeFromFile(File.DirAssets,"livee.json") _
+				.SetAutoRepeat(dwe.AUTO_REPEAT_INFINITE) _
+				.SetAutoStart(True) _
+				.SetCacheEnabled(False)
+	ltw.SetLottieDrawable(dwe.Build)
+
+	
+	livelb.Initialize("")
+	livelb.TextColor=Colors.White
+	livelb.TextSize=mycode.textsize1(20)
+	livelb.Gravity=Gravity.CENTER             
+	livelb.Text="--"
+	livelb.Typeface=mycode.livebold
+	livepn.AddView(livelb,0,0,livepn.Width,livepn.Height)
+	livelb.BringToFront
+	Dim su As StringUtils
+	livelb.Height=su.MeasureMultilineTextHeight(livelb,livelb.Text)
+	
+	livelb.Width=mycode.TextWidth(livelb,livelb.Text)
+	
+	Dim lwh As Int 
+	If livelb.Height > livelb.Width Then
+		lwh  = livelb.Height+10dip
+		Else
+			lwh = livelb.Width+10dip
+	End If
+	livelb.Width = lwh
+	livelb.Height = lwh
+	
+	livepn.Height=lwh+40dip
+	livepn.Width=lwh+40dip
+	livelb.Left = (livepn.Width-livelb.Width)/2
+	livelb.Top=(livepn.Height-livelb.Height)/2
+	livepn.Left=(100%x-livepn.Width)/2
+	livepn.AddView(ltw,0,0,livepn.Width,livepn.Height)
+	livelb.BringToFront
+	
+	timelb.Initialize("")
+	'Chr(0xF00C)
+	Dim c(2) As Int
+	c(0) = 0xC4140C1F
+	c(1)=mycode.bgColor
+	Dim gd As GradientDrawable
+	gd.Initialize("TOP_BOTTOM",c)
+	'timelb.Background =gd
+	timelb.Gravity=Gravity.CENTER
+	timelb.TextSize = 13
+	'timelb.Text = timecsbuilder(Chr(0xF1DA),"-----------")
+	mainscv.Panel.AddView(timelb,0,livepn.Height+livepn.Top+10dip,100%x,10dip)
+	Dim su As StringUtils
+	timelb.Height=su.MeasureMultilineTextHeight(timelb,timecsbuilder(Chr(0xF1DA),"-----------"))
+	If timelb. Height +timelb.Top < barpn.Height Then
+		timelb.Height = barpn.Height - timelb.Top
+		Else
+			timelb.Height =timelb.Height+10dip	
+	End If
+	'Morning................"
+	morningresultpn.Initialize("")
+	
+	morningresultpn.Elevation = 10dip
+	Dim cd As ColorDrawable
+	cd.Initialize(mycode.naviColor,14dip)
+	morningresultpn.Background=cd
+	Dim w As Int = (100%x-30dip)/2
+	mainscv.Panel.AddView(morningresultpn,10dip,timelb.Height+timelb.Top,w,50dip)
+	
+	mtimelb.Initialize("")
+	mdevider.Initialize("")
+	morningresultpn.AddView(mtimelb,0,5dip,morningresultpn.Width,20dip)
+	mtimelb.Gravity=Gravity.CENTER
+	mtimelb.Text=timecsb("11:00 / 12:01PM")
+	Dim su As StringUtils
+	mtimelb.Height=su.MeasureMultilineTextHeight(mtimelb,timecsb("12:01 PM"))
+	morningresultpn.AddView(mdevider,10dip,mtimelb.Height+mtimelb.Top+5dip,morningresultpn.Width-20dip,1dip)
+	mdevider.Color=Colors.Gray
+	
+	morningresultlb.Initialize("")
+	morningresultpn.AddView(morningresultlb,10dip,mdevider.Height+mdevider.Top+2dip,morningresultpn.Width-20dip,50dip)
+	morningresultlb.Gravity=Gravity.CENTER
+	morningresultlb.Text=resultscs("----.--","----.--","--")
+	Dim su As StringUtils
+	Log("here")
+
+	morningresultlb.Height=su.MeasureMultilineTextHeight(morningresultlb,resultscs("1245.12","31465.88","25"))
+	morningresultpn.Height=morningresultlb.Height+morningresultlb.Top+5dip
+	
+	'evening.......................	...........
+	eveningresultpn.Initialize("")
+	eveningresultpn.Elevation =10dip
+	Dim cd As ColorDrawable
+	cd.Initialize(mycode.naviColor,14dip)
+	eveningresultpn.Background=cd
+	Dim w As Int = (100%x-30dip)/2
+	mainscv.Panel.AddView(eveningresultpn,morningresultpn.Width+morningresultpn.Left+10dip,morningresultpn.Top,w,50dip)
+	
+	etimelb.Initialize("")
+	edevider.Initialize("")
+	eveningresultpn.AddView(etimelb,0,5dip,eveningresultpn.Width,20dip)
+	etimelb.Gravity=Gravity.CENTER
+	etimelb.Text=timecsb("4:30PM")
+	Dim su As StringUtils
+	etimelb.Height=su.MeasureMultilineTextHeight(etimelb,timecsb("12:01 PM"))
+	eveningresultpn.AddView(edevider,10dip,etimelb.Height+etimelb.Top+5dip,eveningresultpn.Width-20dip,1dip)
+	edevider.Color=Colors.Gray
+	Log("here")
+	eveningresultlb.Initialize("")
+	eveningresultpn.AddView(eveningresultlb,10dip,edevider.Height+edevider.Top+2dip,eveningresultpn.Width-20dip,50dip)
+	eveningresultlb.Gravity=Gravity.CENTER
+	eveningresultlb.Text=resultscs("----.--","----.--","--")
+	Dim su As StringUtils
+	eveningresultlb.Height=su.MeasureMultilineTextHeight(eveningresultlb,resultscs("1245.12","31465.88","25"))
+	eveningresultpn.Height=eveningresultlb.Height+eveningresultlb.Top+5dip
+	bannertop = eveningresultpn.Height+eveningresultpn.Top+10dip
+	
+	If banner.IsInitialized Then
+		If isAdReceive =True Then
+			Dim l As Int = (100%x-300dip)/2
+			If showCustomMsg = False Then
+				mainscv.Panel.AddView(banner,l,bannertop,300dip,250dip)
+			End If
+			bannerheight=250dip
+		End If
+		Else
+		banner.Initialize2("banner",bannerUnit,banner.SIZE_IAB_MRECT)
+		banner.LoadAd
+	End If
+	
+	
+	Dim mnpn As Panel =MornetPn
+	If showCustomMsg=False Then
+		mainscv.Panel.AddView(mnpn,10dip,bannertop+bannerheight+10dip,100%x-20dip,mnpn.Height)
+	End If
+	
+
+	mainscv.Panel.Height=mnpn.Height+mnpn.Top+10dip
+	
+	Activity.AddView(navigationbar,0,(mycode.ActivityHeight-navpanelheight),100%x,navpanelheight+20dip)
+	
+	
+	progressshow
+		
+	change
+	Log("here = ==============")
+	changetimer.Initialize("changetimer",1000)
+	changetimer.Enabled=True
+	
+	ADConsent
+End Sub
+
+
+
+
+Sub MornetPn As Panel
+	If pn.IsInitialized Then
+		Else
+		pn.Initialize("")
+	End If
+	pn.Background=mycode.btnbg2
+	Dim npn As Panel = MornetNumpn("9:30 AM")
+
+	Dim top As Int = 10dip
+	pn.AddView(npn,10dip,top,100%x-40dip,npn.Height)
+	top = top +npn.Height+7dip
+	Dim tpn As Panel  = MornetNumpn("2:00 PM")
+	pn.AddView(tpn,10dip,top,100%x-40dip,tpn.Height)
+	top = top +tpn.Height
+	pn.Height =top+10dip
+	mipnheingt = pn.Height
+	Return pn
+End Sub
+
+Sub MornetNumpn(time  As String) As Panel
+	Dim p As Panel
+	p.Initialize("")
+	p.Width = 100%x-40dip
+	Dim tmlb As Label
+	tmlb.Initialize("")
+	tmlb.Text=mycode.mitimecs1(time)
+	Dim su As StringUtils
+	Dim tmw As Int = p.Width /2
+	p.AddView(tmlb,0,0,tmw,20dip)
+	tmlb.Gravity=Gravity.CENTER_VERTICAL
+	If time.Contains("9") Then
+		nmodernlb.Initialize("")
+		ninternetlb.Initialize("")
+		nmodernlb.Text= mycode.moderninernetcs1("***")
+		nmodernlb.Gravity=Gravity.CENTER
+		ninternetlb.Text= mycode.moderninernetcs1("***")
+		ninternetlb.Gravity=Gravity.CENTER
+		p.AddView(nmodernlb,tmw,0,tmw/2,20dip)
+		p.AddView(ninternetlb,nmodernlb.Width+nmodernlb.Left,0,tmw/2,20dip)
+		nmodernlb.Height = su.MeasureMultilineTextHeight(nmodernlb,mycode.moderninernetcs1("***"))
+		ninternetlb.Height = nmodernlb.Height
+		tmlb.Height = nmodernlb.Height
+		p.Height =tmlb.Height
+	Else		
+		tmodernlb.Initialize("")
+		tinternetlb.Initialize("")
+		tmodernlb.Text=mycode.moderninernetcs1("***")
+		tmodernlb.Gravity=Gravity.CENTER
+		tinternetlb.Text=mycode.moderninernetcs1("***")
+		tinternetlb.Gravity=Gravity.CENTER
+		p.AddView(tmodernlb,tmw,0,tmw/2,20dip)
+		p.AddView(tinternetlb,tmodernlb.Width+tmodernlb.Left,0,tmw/2,20dip)
+		tmodernlb.Height = su.MeasureMultilineTextHeight(tmodernlb,mycode.moderninernetcs1("***"))
+		tinternetlb.Height = tmodernlb.Height
+		tmlb.Height = tmodernlb.Height
+		p.Height =tmlb.Height
+	End If
+	Return p
+End Sub
+
+
+
+Sub RewardedInterstitialAd_ReceiveAd
+	ToastMessageShow("RewardInterstitialAd_ReceiveAd", False)
+	LogColor($"RewardInterstitialAd_ReceiveAd"$, Colors.Green)
+End Sub
+
+Sub RewardedInterstitialAd_FailedToReceiveAd (ErrorCode As String)
+	LogColor($"RewardedInterstitialAd_FailedToReceiveAd ErrorCode=${ErrorCode}"$, Colors.Green)
+End Sub
+
+Sub RewardedInterstitialAd_Rewarded (Item As Object)
+	LogColor("RewardedInterstitialAd_Rewarded",Colors.Green)
+	Dim Reward As JavaObject = Item
+	Dim Amount As Int = Reward.RunMethod("getAmount", Null)
+	Dim RewardType As String = Reward.RunMethod("getType", Null)
+	Log("Rewarded: " & Amount & " -> " & RewardType)
+	
+End Sub
+
+Sub settingbtn_click
+	StartActivity(settings)
+End Sub
+
+Sub banner_ReceiveAd
+	adErrorCode = "got"
+	If showCustomMsg =False Then
+		Log("ad recived")
+		banner.RemoveView
+		bannerheight = 250dip
+		pn.RemoveView
+		mainscv.Panel.AddView(banner,(100%x-300dip)/2,bannertop,300dip,bannerheight)
+	
+		mainscv.Panel.AddView(pn,10dip,bannerheight+bannertop+5dip,100%x-20dip,mipnheingt)
+		Dim scvheiht As Int
+		scvheiht  = mipnheingt+250dip+bannertop
+		mainscv.Panel.Height=scvheiht+100dip
+	End If
+	isAdReceive=True
+End Sub
+
+Sub banner_FailedToReceiveAd (ErrorCode As String)
+	isAdReceive=False
+	Dim json As JSONParser
+	json.Initialize(ErrorCode)
+	Dim m As Map  = json.NextObject
+	
+	adErrorCode =m.Get("Code")
+	Log("Failed: " & ErrorCode)
+
+End Sub
+
+Sub Activity_KeyPress (KeyCode As Int) As Boolean
+	If KeyCode  = KeyCodes.KEYCODE_BACK Then
+		If showCustomMsg = True Then
+			showCustomMsg=False
+			Activity.RemoveViewAt(Activity.NumberOfViews-1)
+			Else
+			keypresscount = keypresscount +1
+			If keypresscount >1 Then
+				Activity.Finish
+			Else
+				ToastMessageShow("Press Again To Closed",False)
+			End If
+		End If
+	End If
+	Return True
+End Sub
+
+Sub Connect
+	If sse.IsInitialized Then
+		sse.Finish
+		sse.Connect(newsite&"live")
+		Else
+		sse.Initialize(Me,"live","live",Application.PackageName)
+		sse.Connect(newsite&"live")
+	End If
+End Sub
+
+
+Sub Activity_Resume
+	isCall=True
+
+	keypresscount =0
+	If changetimer.IsInitialized Then
+		changetimer.Enabled=True
+	End If
+	Connect
+	change
+	
+	If inter.IsInitialized Then
+		If  inter.Ready = False Then
+			inter.LoadAd
+		End If
+		
+		Else
+		inter.Initialize("inter",interUnit)
+		inter.LoadAd
+	
+	End If
+	
+	
+	If banner.IsInitialized Then
+		banner.Resume
+		If isAdReceive =True Then
+			bannerheight =250dip
+			Else
+				bannerheight = 0
+				banner.LoadAd
+		End If
+		Else
+		banner.Initialize2("banner",bannerUnit,banner.SIZE_IAB_MRECT)
+			banner.LoadAd
+	End If
+	
+	If isCLosed = False Then
+		Else
+		If pn.IsInitialized Then
+					
+			pn.RemoveView
+			If showCustomMsg =False Then
+				mainscv.Panel.AddView(pn,10dip,bannerheight+bannertop+5dip,100%x-20dip,mipnheingt)
+				mainscv.Panel.Height=mipnheingt+250dip+bannertop+10dip
+			End If
+		
+		End If
+	End If
+	
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+	sse.Finish
+	If sse.IsInitialized Then
+		sse.Finish
+		Else
+			sse.Initialize(Me,"live","live",Application.PackageName)
+			sse.Finish
+	End If
+	If changetimer.IsInitialized Then
+		changetimer.Enabled=False
+	End If
+	isCall=False
+	If UserClosed =False Then
+		isCLosed = False
+		Else
+			isCLosed=True
+	End If
+	banner.Pause
+	
+End Sub
+
+Sub Activity_PermissionResult (Permission As String, result As Boolean)
+	
+End Sub
+
+Sub Create_Menu (Menu As Object)
+	
+End Sub
+
+#if Java
+public boolean _onCreateOptionsMenu(android.view.Menu menu) {
+	 processBA.raiseEvent(null, "create_menu", menu);
+	 return true;
+	
+}
+#End If
+#End Region
+
+'Program code should go into B4XMainPage and other pages.
+
+Sub resultscs (set As String, value As String,twod As String) As CSBuilder
+	Dim sett As String
+	Dim setresult As String
+	Dim valuel As String
+	Dim valuer As String
+	Dim valueresult As String
+	
+	If set.Length >0 And set.Contains(".") Then
+		setresult = set.SubString(set.Length-1)
+		sett  = set.SubString2(0,set.Length-1)
+	End If
+	If value.Length>0 And value.Contains(".") Then
+		valuel = value.SubString(value.IndexOf("."))
+		valuer = value.Replace(valuel,"")
+		valueresult = valuer.SubString(valuer.Length-1)
+		valuer = valuer.SubString2(0,valuer.Length-1)
+	End If
+	
+	Dim  cs As CSBuilder
+	cs.Initialize
+	Dim cs1 As CSBuilder
+	cs1.Initialize
+	If twod.Contains("=") Then
+		
+		Dim twodl As List = Regex.Split("=",twod)
+		cs.Size(mycode.textsize(13)).Typeface(mycode.semibold).Color(Colors.LightGray).Append(twodl.Get(0)).Pop
+		cs.Size(mycode.textsize(15)).Typeface(mycode.semibold).Color(Colors.DarkGray).Append(" / ").Pop
+		
+		cs.Size(mycode.textsize(15)).Typeface(mycode.semibold).Color(Colors.Yellow).Append(twodl.Get(1)&CRLF).Pop
+		Else
+		cs.Size(mycode.textsize(15)).Typeface(mycode.semibold).Color(Colors.Yellow).Append(twod&CRLF).Pop
+			
+	End If
+	If set.Contains(".")  Then
+		cs.Size(mycode.textsize(9)).Typeface(mycode.lightfont).Color(Colors.White).Append(sett).Pop
+		cs.Size(mycode.textsize(9)).Typeface(mycode.lightfont).Color(Colors.Yellow).Append(setresult&CRLF).Pop
+	
+		cs.Size(mycode.textsize(9)).Typeface(mycode.lightfont).Color(Colors.White).Append(valuer).Pop
+		cs.Size(mycode.textsize(9)).Typeface(mycode.lightfont).Color(Colors.Yellow).Append(valueresult).Pop
+		cs.Size(mycode.textsize(9)).Typeface(mycode.lightfont).Color(Colors.White).Append(valuel).PopAll
+		Else
+		cs.Size(mycode.textsize(9)).Typeface(mycode.lightfont).Color(Colors.White).Append(set).Pop
+		cs.Size(mycode.textsize(9)).Typeface(mycode.lightfont).Color(Colors.White).Append(value).PopAll
+	
+	End If
+
+	Return cs
+End Sub
+
+Sub timecsb (time As String) As CSBuilder
+	Dim  cs As CSBuilder
+	cs.Initialize
+'	cs.Typeface(Typeface.FONTAWESOME).Size(mycode.textsize(8)).Color(Colors.White).Append(icon&" ").Pop
+'	cs.Typeface(mycode.defaultfont).Size(mycode.textsize(8)).Color(Colors.White).Append(time&" ")
+'	cs.Typeface(mycode.defaultfont).Size(mycode.textsize(8)).Color(Colors.White).Append(ampm).PopAll
+	cs.Typeface(mycode.defaultfont).Size(mycode.textsize(8)).Color(Colors.White).Append(time&" ").PopAll
+
+	Return cs
+End Sub
+
+Sub changetimer_tick
+	DateTime.DateFormat="yyyy/MM/dd"
+	If livelb.IsInitialized Then
+		If changelean =True Then
+			If DateTime.TimeParse("09:20:00") <(DateTime.Now) And DateTime.TimeParse("12:01:00") > (DateTime.Now) Then
+				If DateTime.Now  - sse.lastime >30000 Then
+					Connect
+				End If
+				ltw.PlayAnimation
+				livelb.Text="  "
+				morningresultlb.Text = resultscs("     ","     ","--")
+				Sleep(500)
+			else If DateTime.TimeParse("13:50:00") <(DateTime.Now) And DateTime.TimeParse("16:30:00") > (DateTime.Now) Then
+				If DateTime.Now  - sse.lastime >30000 Then
+					Connect
+				End If
+				ltw.PlayAnimation
+				livelb.Text="  "
+				eveningresultlb.Text = resultscs("     ","     ","--")
+				Sleep(500)
+			End If
+
+		Else
+			ltw.StopAnimation
+	
+		End If
+	End If
+		
+	changetimer.Enabled=False
+	change
+End Sub
+
+Sub timecsbuilder (icon As String,time As String) As CSBuilder
+	Dim cs As CSBuilder
+	cs.Initialize
+	cs.Color(Colors.White).Typeface(Typeface.FONTAWESOME).Size(mycode.textsize(6)).Append(icon).Pop
+	cs.Color(Colors.White).Typeface(mycode.defaultfont).Size(mycode.textsize(6)).Append("Update Time : "&time).PopAll
+
+	Return cs
+End Sub
+
+Sub getinfo(info As String)
+
+	Try
+		Dim json As JSONParser
+		json.Initialize(info)
+		Dim ls As List = json.NextArray
+		If ls.Size >0 Then
+			For i = 0 To ls.Size -1
+				Dim m As Map = ls.Get(i)
+				Dim  a As Int = m.Get("version")
+				If a > Application.VersionCode Then
+					updateMsg(m.Get("upfun"))
+				Else
+					progressHide
+					Dim pp As Panel = navigationbar
+					pp.Elevation=10dip
+				End If
+				If m.Get("inappMsg") = "true" Then
+					If splashscreen.Visible=False Then
+						Log("show message box")
+						customMsg(m.Get("title"),m.Get("body"),m.Get("link"))
+					End If
+				End If
+			Next
+		End If
+	Catch
+		Dim job As HttpJob
+		job.Initialize(inforeader,Starter)
+		job.Download(site&"read.php?name=info.txt")
+		Log(LastException)
+	End Try
+End Sub
+
+Sub customMsg(t As String,b As String,link As String) 
+	showCustomMsg =True
+	Dim p As Panel
+	p.Initialize("")
+	p.Elevation=5dip
+	Dim cd As ColorDrawable
+	cd.Initialize(Colors.White,10dip)
+	p.Background=cd
+	Dim base As Panel
+	base.Initialize("")
+	Dim titlelb As Label
+	Dim bodylb As Label
+	titlelb = lbbb(Typeface.CreateNew(mycode.mmfont,Typeface.STYLE_BOLD),Colors.Black,t,10)
+	Dim ybtn As Button
+	Dim nbtn As Button
+	ybtn.Initialize("ybtn")
+	ybtn.Background = mycode.btnbgdynamic(mycode.naviColor,Colors.Gray,10dip)
+	ybtn.Text = "Yes"
+	ybtn.Tag=link
+	nbtn.Initialize("nbtn")
+	nbtn.Background=mycode.btnbgdynamic(mycode.naviColor,Colors.Gray,10dip)
+	nbtn.Text = "No"
+	ybtn.TextColor=Colors.White
+	nbtn.TextColor=Colors.White
+	ybtn.TextSize = mycode.textsize(7)
+	nbtn.TextSize = mycode.textsize(7)
+	nbtn.Tag=base
+	Activity.AddView(base,0,0,100%x,mycode.ActivityHeight)
+	base. AddView(p,15dip,10dip,100%x-30dip,30dip)
+	p.AddView(titlelb,10dip,10dip,p.Width-20dip,titlelb.Height)
+	Dim top As Int = titlelb.Height +titlelb.Top+15dip
+	bodylb = lbbb(mycode.mmfont,Colors.Black,b,9)
+	p.AddView(bodylb,10dip,top,p.Width-20dip,bodylb.Height)
+	bodylb.Gravity=Gravity.CENTER
+	top = bodylb.Height +bodylb.Top+20dip
+	Dim w As Int = (p.Width-30dip)/2
+	p.AddView(nbtn,10dip,top,w,40dip)
+	p.AddView(ybtn,nbtn.Width+nbtn.Left+10dip,top,w,40dip)
+	p.Height =ybtn.Height+ybtn.Top+10dip
+	p.Top=(mycode.ActivityHeight-p.Height)/2
+End Sub
+
+Sub ybtn_click
+	Dim b As Button =Sender
+	Dim pi As PhoneIntents
+	StartActivity(pi.OpenBrowser(b.Tag))
+End Sub
+
+Sub nbtn_click
+	showCustomMsg =False
+	Dim b As Button = Sender
+	Dim p As Panel =b.Tag
+	p.Visible=False
+	p.RemoveView
+	Log("ad recived")
+	If isAdReceive = True Then
+		banner.RemoveView
+		bannerheight = 250dip
+		pn.RemoveView
+		mainscv.Panel.AddView(banner,(100%x-300dip)/2,bannertop,300dip,bannerheight)
+	
+		mainscv.Panel.AddView(pn,10dip,bannerheight+bannertop+5dip,100%x-20dip,mipnheingt)
+		Dim scvheiht As Int
+		scvheiht  = mipnheingt+250dip+bannertop
+		mainscv.Panel.Height=scvheiht+100dip
+	
+	End If
+End Sub
+
+Sub customsgbase_click
+	showCustomMsg =False
+	Dim p As Panel = Sender
+	p.Visible=False
+	p.RemoveView
+End Sub
+
+Sub lbbb(tp As Typeface,color As Int,text As String,size As Int) As Label
+	Dim lb As Label 
+	lb.Initialize("")
+	lb.Typeface = tp
+	lb.TextColor=color
+	lb.Text= text
+	lb.Width = 100%x-40dip
+	lb.TextSize = mycode.textsize (size)
+	Dim su As StringUtils
+	lb.Height = su.MeasureMultilineTextHeight(lb,text)
+	Return lb
+End Sub
+
+
+Sub updateMsg (upfun As String)
+	LottieView.Visible=False
+	Dim p As Panel
+	p.Initialize("")
+	Dim lb As Label
+	Dim lb2 As Label
+	Dim updatebtn As Button
+	lb.Initialize("")
+	lb2.Initialize("")
+	updatebtn.Initialize("updatebtn")
+	updatebtn.Background=mycode.btnbgdynamic(mycode.bgColor,Colors.DarkGray,10dip)
+	updatebtn.Text = "Update လုပ်မယ်"
+	updatebtn.TextSize = mycode.textsize(9)
+	updatebtn.Typeface = mycode.mmfont
+	updatebtn.TextColor=Colors.White
+	splashscreen.AddView(p,10dip,mycode.ActivityHeight-200dip,100%x-20dip,150dip)
+	p.AddView(lb,10dip,10dip,p.Width-20dip,30dip)
+	lb.Gravity=Gravity.CENTER
+	lb.Text=  upfun
+	lb.Typeface=mycode.mmfont
+	lb.TextSize = mycode.textsize(9)
+	lb.TextColor=Colors.White
+	Dim su As StringUtils
+	lb.Height = su.MeasureMultilineTextHeight(lb,lb.Text)
+	p.AddView(updatebtn,(p.Width-200dip)/2,lb.Height+lb.Top+10dip,200dip,50dip)
+	p.Height = updatebtn.Height +updatebtn.Top+10dip
+	lb2.Gravity=Gravity.CENTER
+	Dim cs As CSBuilder
+	cs.Initialize.Color(Colors.RGB(255,191,0)).Size(mycode.textsize(9)).Typeface(mycode.mmfont).Pop
+	cs.Clickable("notupdate",1).Underline.Append("မလုပ်သေးပါ").Pop.Pop.PopAll
+	cs.EnableClickEvents(lb2)
+	lb2.Text= cs
+	p.AddView(lb2,10dip,updatebtn.Height+updatebtn.Top+10dip,p.Width-20dip,30dip)
+	lb2.Height = su.MeasureMultilineTextHeight(lb2,cs)
+	p.Height = lb2.Height+lb2.Top+10dip
+	
+	p.Top = mycode.ActivityHeight - (p.Height+50dip)
+End Sub
+
+Sub notupdate_click(tag As Object)
+	splashscreen.RemoveView
+	splashscreen.Visible=False
+End Sub
+
+
+
+
+Sub lottobtn_click
+	Try
+		Dim json As JSONParser
+		json.Initialize(File.ReadString(File.DirInternal,"info"))
+		Dim ls As List = json.NextArray
+		
+		Dim m As Map = ls.Get(0)
+		If adErrorCode = "0" And adErrorCode <> "" Then
+			Log("code : 0")
+		If m.Get("require") = "true" Then
+			Log("errorcode : 0")
+			ToastMessageShow("⚠️ကွန်ရက်ချိတ်ဆက်မှု မအောင်မြင်ပါ",True)
+		Else
+	
+					
+				If inter.Ready Then
+					inter.Show
+					nextactivity = lottoscoiety
+				Else
+					StartActivity(lottosociety)
+				End If
+		End If
+		Else
+
+			If inter.Ready Then
+				inter.Show
+				nextactivity = lottoscoiety
+			Else
+				StartActivity(lottosociety)
+			End If
+		End If
+		
+Catch
+	Log(LastException)
+End Try
+End Sub
+
+Sub updatebtn_click
+	Dim pi As PhoneIntents
+	StartActivity(pi.OpenBrowser("https://play.google.com/store/apps/details?id=com.burma.royal2d"))
+End Sub
+
+Sub StrokeCSBuilder(lbl As Label, cs As CSBuilder, strokeColor As Int, fillColor As Int, strokeWidth As Float)
+	Dim cvs As Canvas
+	cvs.Initialize(lbl)
+
+	' Stroke Layer (အနားနားမှာ)
+	For angle = 0 To 360 Step 15
+		Dim dx As Float = CosD(angle) * strokeWidth
+		Dim dy As Float = SinD(angle) * strokeWidth
+		cvs.DrawText(cs.ToString, lbl.Width/2 + dx, lbl.Height/2 + dy, Typeface.FONTAWESOME, lbl.TextSize, strokeColor, "CENTER")
+	Next
+    
+	' Fill Layer (အလယ်)
+	cvs.DrawText(cs.ToString, lbl.Width/2, lbl.Height/2, Typeface.FONTAWESOME, lbl.TextSize, fillColor, "CENTER")
+    
+
+End Sub
+
+Sub StrokeCSBuilder1(lbl As Label, cs As String, strokeColor As Int, fillColor As Int, strokeWidth As Float)
+	Dim cvs As Canvas
+	cvs.Initialize(lbl)
+
+	' Stroke Layer (အနားနားမှာ)
+	For angle = 0 To 360 Step 15
+		Dim dx As Float = CosD(angle) * strokeWidth
+		Dim dy As Float = SinD(angle) * strokeWidth
+		cvs.DrawText(cs, lbl.Width/2 + dx, lbl.Height/2 + dy, Typeface.FONTAWESOME, lbl.TextSize, strokeColor, "CENTER")
+	Next
+    
+	' Fill Layer (အလယ်)
+	cvs.DrawText(cs, lbl.Width/2, lbl.Height/2, Typeface.FONTAWESOME, lbl.TextSize, fillColor, "CENTER")
+    
+
+End Sub
+
+
+Sub change
+	
+	Try
+		If File.Exists(File.DirInternal,"live") Then
+			Dim json As JSONParser
+			json.Initialize(File.ReadString(File.DirInternal,"live"))
+			Dim ls As List = json.NextArray
+
+			If ls.Size>0 Then
+				For i = 0 To ls.Size-1
+					Dim m As Map = ls.Get(i)
+					If m.Get("status") = "On" Then
+						StrokeCSBuilder(timelb,timecsbuilder(Chr(0xF1DA),m.Get("updatetime")),Colors.Black,Colors.White,5)
+'						timelb.Text  =timecsbuilder(Chr(0xF1DA),m.Get("updatetime"))
+						changelean = True
+					Else If m.Get("status") = "OFF" Then
+						StrokeCSBuilder(timelb,timecsbuilder(Chr(0xF00C),m.Get("updatetime")),Colors.Black,Colors.White,5)
+						
+					'	timelb.Text  =timecsbuilder(Chr(0xF00C),m.Get("updatetime"))
+						changelean=False
+					
+					End If
+					
+
+					livelb.Text= m.Get("live")
+				
+					morningresultlb.Text = resultscs(m.Get("mset"),m.Get("mvalue"),m.Get("mresult"))
+	
+					eveningresultlb.Text = resultscs(m.Get(LiveUtils.Change("430set")),m.Get(LiveUtils.Change("430value")),m.get(LiveUtils.change("430")))
+					nmodernlb.Text = mycode.moderninernetcs1(m.Get(LiveUtils.Change("930modern")))
+					ninternetlb.Text = mycode.moderninernetcs1(m.Get(LiveUtils.Change("930internet")))
+					tmodernlb.Text = mycode.moderninernetcs1(m.Get(LiveUtils.Change("200modern")))
+					tinternetlb.Text = mycode.moderninernetcs1(m.Get(LiveUtils.Change("200internet")))
+					
+			
+				Next
+			Else
+				Sleep(1000)
+			
+				livelb.Text= "--"
+				morningresultlb.Text = resultscs("----.--","----.--","--")
+				eveningresultlb.Text = resultscs("----.--","----.--","--")
+				nmodernlb.Text = mycode.moderninernetcs1("---")
+				ninternetlb.Text = mycode.moderninernetcs1("---")
+				tmodernlb.Text = mycode.moderninernetcs1("---")
+				tinternetlb.Text = mycode.moderninernetcs1("---")
+			End If
+	
+			If changetimer.IsInitialized Then
+				changetimer.Enabled=True
+			End If
+		Else
+			
+		End If
+	Catch
+		Log(LastException)
+	End Try
+End Sub
+
+
+Sub navigationbar As Panel
+	Dim navigatepanel As Panel
+	Dim historybtn As Button
+	Dim giftbtn As Button
+	Dim threedbtn As Button
+	Dim chatbtn As Button
+	navigatepanel.Initialize("")
+	
+	historybtn.Initialize("histroybtn")
+	giftbtn.Initialize("giftbtn")
+	threedbtn.Initialize("threedbtn")
+	chatbtn.Initialize("paperbtn")
+	chatbtn.Text= buttoncsb(False,Chr(0xF1EA),True)
+	chatbtn.Background=mycode.btnbg(False)
+	Dim w As Int
+	w = (100%x-60dip)/5
+	navigatepanel.AddView(giftbtn,10dip,5dip,w*2,w)
+	navigatepanel.AddView(historybtn,giftbtn.Width+giftbtn.Left+10dip,5dip,w,w)
+
+	navigatepanel.AddView(threedbtn,historybtn.Width+historybtn.Left+10dip,5dip,w,w)
+	navigatepanel.AddView(chatbtn,threedbtn.Width+threedbtn.Left+10dip,5dip,w,w)
+	historybtn.Text= buttoncsb(False,Chr(0xF073),True)
+	historybtn.Background=mycode.btnbg(False)
+	'giftbtn.Text =buttoncsb(False, Chr(0xF06B),True)
+	giftbtn.Color=Colors.Transparent
+	giftbtn.SetBackgroundImage(LoadBitmap(File.DirAssets,"giftbtn.webp"))
+	threedbtn.Text=buttoncsb(False,"3D",False)
+	threedbtn.Background=mycode.btnbg(False)
+	
+	Dim cd As ColorDrawable
+	cd.Initialize(mycode.naviColor,25dip)
+	navigatepanel.Background=cd
+	navpanelheight=w +10dip
+	Return navigatepanel
+End Sub
+
+Sub buttoncsb(home As Boolean,text As String,iconic As Boolean) As CSBuilder
+	Dim csb As CSBuilder
+	csb.Initialize
+	If home = True Then
+
+		csb.Color(Colors.Green).Typeface(Typeface.DEFAULT_BOLD).Size(20).Append(text).PopAll
+		Else
+			If iconic = True Then
+			If text  = Chr(0xF06B) Then
+				csb.Color(0xFFDBDBDB).Typeface(Typeface.FONTAWESOME).Size(35).Append(text).PopAll
+			Else
+				csb.Color(0xFFDBDBDB).Typeface(Typeface.FONTAWESOME).Size(20).Append(text).PopAll
+			End If
+			Else
+			
+		
+			csb.Color(0xFFDBDBDB).Typeface(Typeface.DEFAULT_BOLD).Size(20).Append(text).PopAll
+					
+			End If
+			
+	End If
+	Return csb
+End Sub
+
+Sub paperbtn_click
+	If inter.Ready Then
+		inter.Show
+		nextactivity = fututerpaper
+	Else
+		StartActivity(Future_Tips)
+			
+	End If
+End Sub
+
+Sub chatbtn_click
+	If inter.Ready Then
+		inter.Show
+		nextactivity = publicChat
+	Else
+		StartActivity(public_chat)
+			
+	End If
+End Sub
+
+Sub histroybtn_click
+	StartActivity(history)
+'	If inter.Ready Then
+'		inter.Show
+'		nextactivity =histroyact
+'	Else
+'		StartActivity(history)
+'			
+'	End If
+End Sub
+
+
+Sub threedbtn_click
+	StartActivity(threed)
+'	If inter.Ready Then
+'		inter.Show
+'		nextactivity =threedact
+'	Else
+'		StartActivity(threed)
+'			
+'	End If
+End Sub
+
+Sub giftbtn_Click
+	StartActivity(gift_activity)
+End Sub
+
+Sub inter_ReceiveAd
+	adErrorCode = "got"
+End Sub
+
+Sub inter_FailedToReceiveAd (ErrorCode As String)
+	adErrorCode=ErrorCode
+	Log("Failed: " & ErrorCode)
+End Sub
+
+Sub inter_AdClosed
+
+End Sub
+
+Sub inter_AdOpened
+	Select nextactivity
+		Case histroyact
+			StartActivity(history)
+		Case threedact
+			StartActivity(threedact)
+			Case publicChat
+				StartActivity(public_chat)
+				Case lottoscoiety
+					StartActivity(lottosociety)
+					Case fututerpaper
+						StartActivity(Future_Tips)
+	End Select
+	
+End Sub
+
+
+Sub ADConsent
+	Dim ads As AdsHelper
+ads.Initialize
+	If ads.GetConsentStatus = "UNKNOWN" Or ads.GetConsentStatus = "REQUIRED" Then
+		Wait For (ads.RequestConsentInformation(False)) Complete (Success As Boolean)
+	End If
+	If ads.GetConsentStatus = "REQUIRED" And ads.GetConsentFormAvailable Then
+		Wait For (ads.ShowConsentForm) Complete (Success As Boolean)
+	End If
+End Sub
+
+
+Private Sub CheckAndRequestNotificationPermission As ResumableSub
+	Dim p As Phone
+	If p.SdkVersion < 33 Then Return True
+	Dim ctxt As JavaObject
+	ctxt.InitializeContext
+	Dim targetSdkVersion As Int = ctxt.RunMethodJO("getApplicationInfo", Null).GetField("targetSdkVersion")
+	If targetSdkVersion < 33 Then Return True
+	Dim NotificationsManager As JavaObject = ctxt.RunMethod("getSystemService", Array("notification"))
+	Dim NotificationsEnabled As Boolean = NotificationsManager.RunMethod("areNotificationsEnabled", Null)
+	If NotificationsEnabled Then Return True
+	Dim rp As RuntimePermissions
+	rp.CheckAndRequest(rp.PERMISSION_POST_NOTIFICATIONS)
+	Wait For Activity_PermissionResult (Permission As String, Result As Boolean) 'change to Activity_PermissionResult if non-B4XPages.
+	Log(Permission & ": " & Result)
+	Return Result
+End Sub
+
+Sub splash_Click
+	
+	
+End Sub
+Sub progressshow
+	splashscreen.Initialize("splash")
+	splashscreen.Color=mycode.naviColor
+	Activity.AddView(splashscreen,0,0,100%x,mycode.ActivityHeight)
+	versionlb.Initialize("")
+	
+	splashscreen.AddView(versionlb,0,mycode.ActivityHeight-50dip,100%x,20dip)
+	versionlb.Text=Application.VersionName
+	versionlb.TextColor=Colors.White
+	versionlb.Gravity=Gravity.CENTER
+	Dim tlogo As Int = (mycode.ActivityHeight-50dip)/2
+	Dim llogo As Int = (100%x-50dip)/2
+	Dim su As StringUtils
+	versionlb.Top=(mycode.ActivityHeight-su.MeasureMultilineTextHeight(versionlb,versionlb.Text))
+	versionlb.Top=versionlb.Top-10dip
+
+	AXrLottie.Initialize
+	LottieView.Initialize("")
+	Dim left As Int = (100%x-150dip)/2
+	Sleep(0)
+	splashscreen.AddView(LottieView,left,mycode.ActivityHeight-200dip,150dip,150dip)
+	Dim Drawable As AXrLottieDrawableBuilder
+	Drawable.InitializeFromFile(File.DirAssets,"peace.json") _
+				.SetAutoRepeat(Drawable.AUTO_REPEAT_INFINITE) _
+				.SetAutoStart(True) _
+				.SetCacheEnabled(False)
+	LottieView.SetLottieDrawable(Drawable.Build)
+
+	logo.Initialize("")
+	splashscreen.AddView(logo,llogo,tlogo,50dip,50dip)
+	logo.SetBackgroundImage(LoadBitmap(File.DirAssets,"burma2d_logo.webp"))
+	logo.Gravity=Gravity.FILL
+	splashscreen.BringToFront
+End Sub
+
+Sub progressHide
+	splashscreen.Visible=False
+End Sub
+
+
+
+Sub checkinfo
+	Dim Job As HttpJob
+	Job.Initialize(inforeader,Me)
+	Job.Download(site&"read.php?name=info.txt")
+
+End Sub
+
+Sub JobDone (job As HttpJob)
+	Try
+		If job.Success Then
+				
+				File.WriteString(File.DirInternal,"info",job.GetString)
+				CallSubDelayed2(Me,"getinfo",File.ReadString(File.DirInternal,"info"))
+			job.Release
+		Else
+			Log("fail retry")
+		checkinfo		
+		End If
+		
+	Catch
+		checkinfo
+	End Try
+End Sub
+	
+	

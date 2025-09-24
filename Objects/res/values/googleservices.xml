@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <string name="firebase_database_url" translatable="false" />
+  <string name="gcm_defaultSenderId" translatable="false">336054383743</string>
+  <string name="google_storage_bucket" translatable="false">burma2d-67734.firebasestorage.app</string>
+  <string name="project_id" translatable="false">burma2d-67734</string>
+  <string name="google_app_id" translatable="false">1:336054383743:android:6ff3102b2bb0e065a1fb4a</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDBBvq7HoSwX-S4SSsvzXR5h1COeJdrI44</string>
+  <string name="google_api_key" translatable="false">AIzaSyDBBvq7HoSwX-S4SSsvzXR5h1COeJdrI44</string>
+  <string name="default_web_client_id" translatable="false">336054383743-f17op386t5fv80h5cqkoumko31scrp4l.apps.googleusercontent.com</string>
+</resources>

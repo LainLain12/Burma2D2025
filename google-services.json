@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "336054383743",
+    "project_id": "burma2d-67734",
+    "storage_bucket": "burma2d-67734.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:336054383743:android:6ff3102b2bb0e065a1fb4a",
+        "android_client_info": {
+          "package_name": "com.burma.royal2d"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "336054383743-sjf5nbsdb2t1s0tsfrqmg4rnbg13479c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.burma.royal2d",
+            "certificate_hash": "5f30c2dd1d96cc4efdfdee05668ba89404335ee5"
+          }
+        },
+        {
+          "client_id": "336054383743-f17op386t5fv80h5cqkoumko31scrp4l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDBBvq7HoSwX-S4SSsvzXR5h1COeJdrI44"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "336054383743-f17op386t5fv80h5cqkoumko31scrp4l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	package="com.burma.royal2d"
+	android:versionCode="1"
+	android:versionName="1.0.1"
+	android:installLocation="internalOnly">
+	
+	<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="34"/>
+	<supports-screens android:largeScreens="true" 
+	    android:normalScreens="true" 
+	    android:smallScreens="true" 
+	    android:anyDensity="true"/>
+	<permission
+	        android:name="com.burma.royal2d.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+	        android:protectionLevel="signature" />
+	
+	    <uses-permission android:name="com.burma.royal2d.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+	<uses-permission android:name="android.permission.INTERNET"/>
+	<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+	<uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+	<uses-permission android:name="android.permission.VIBRATE"/>
+	<uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+	<uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+	<uses-permission android:name="android.permission.WAKE_LOCK"/>
+	<uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+	<uses-permission android:name="com.burma.royal2d.permission.C2D_MESSAGE"/>
+	<uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"/>
+	<application
+		android:name="androidx.multidex.MultiDexApplication"
+		android:icon="@drawable/icon"
+		android:label="Burma2D2025"
+		android:theme="@style/LightTheme"
+		android:usesCleartextTraffic="true"
+		android:networkSecurityConfig="@xml/network_security_config"
+		android:appComponentFactory="androidx.core.app.CoreComponentFactory">
+		
+		<activity android:name="com.google.android.gms.common.api.GoogleApiActivity"
+		                  android:theme="@android:style/Theme.Translucent.NoTitleBar"
+		                  android:exported="false"/>
+			 <meta-data
+		            android:name="com.google.android.gms.version"
+		            android:value="@integer/google_play_services_version" />
+		<activity android:name="com.google.android.gms.common.api.GoogleApiActivity"
+		  android:theme="@android:style/Theme.Translucent.NoTitleBar"
+		  android:exported="false"/>
+		    <meta-data
+		  android:name="com.google.android.gms.version"
+		  android:value="@integer/google_play_services_version" />
+		<activity
+		  android:name="com.google.android.gms.ads.AdActivity"
+		  android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|uiMode|screenSize|smallestScreenSize"
+		  android:theme="@android:style/Theme.Translucent" />
+		  <activity android:name="com.google.android.gms.ads.purchase.InAppPurchaseActivity"
+		  android:theme="@style/Theme.IAPTheme"/>
+		    <provider
+		            android:name="com.google.android.gms.ads.MobileAdsInitProvider"
+		            android:authorities="com.burma.royal2d.mobileadsinitprovider"
+		            android:exported="false"
+		            android:initOrder="100" />
+		   <meta-data
+		            android:name="com.google.android.gms.ads.APPLICATION_ID"
+		            android:value="ca-app-pub-3940256099942544~3347511713"/>
+		<receiver
+		            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+		            android:enabled="true"
+		            android:exported="false" >
+		        </receiver>
+		
+		  <service
+		            android:name="com.google.android.gms.measurement.AppMeasurementService"
+		            android:enabled="true"
+		            android:exported="false" />
+					
+		<service
+		            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+		            android:enabled="true"
+		            android:exported="false"
+		            android:permission="android.permission.BIND_JOB_SERVICE" />
+		
+		 <service android:name="com.google.firebase.components.ComponentDiscoveryService"  android:directBootAware="true" android:exported="false"  >
+		            <meta-data
+		                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+		                android:value="com.google.firebase.components.ComponentRegistrar" />
+					 <meta-data
+		                android:name="com.google.firebase.components:com.google.firebase.iid.Registrar"
+		                android:value="com.google.firebase.components.ComponentRegistrar" />
+		             <meta-data
+		                android:name="com.google.firebase.components:com.google.firebase.auth.FirebaseAuthRegistrar"
+		                android:value="com.google.firebase.components.ComponentRegistrar" />
+		             <meta-data
+		                android:name="com.google.firebase.components:com.google.firebase.storage.StorageRegistrar"
+		                android:value="com.google.firebase.components.ComponentRegistrar" />
+		            <meta-data 
+						android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar"
+						android:value="com.google.firebase.components.ComponentRegistrar"/>
+		
+					<meta-data
+		   				 android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+		   				 android:value="com.google.firebase.components.ComponentRegistrar"/>
+		   			 <meta-data
+		                android:name="com.google.firebase.components:com.google.firebase.messaging.FirebaseMessagingRegistrar"
+		                android:value="com.google.firebase.components.ComponentRegistrar" />
+		             <meta-data
+		                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+		                android:value="com.google.firebase.components.ComponentRegistrar" />
+		              <meta-data
+		                android:name="com.google.firebase.components:com.google.firebase.crashlytics.CrashlyticsRegistrar"
+		                android:value="com.google.firebase.components.ComponentRegistrar" />
+		             <meta-data
+		                android:name="com.google.firebase.components:com.google.firebase.remoteconfig.RemoteConfigRegistrar"
+		                android:value="com.google.firebase.components.ComponentRegistrar"/>
+		            <meta-data
+		                android:name="com.google.firebase.components:com.google.firebase.abt.component.AbtRegistrar"
+		                android:value="com.google.firebase.components.ComponentRegistrar"/>
+		               
+		</service>
+		   <provider
+		     android:name="com.google.firebase.provider.FirebaseInitProvider"
+		            android:authorities="com.burma.royal2d.firebaseinitprovider"
+		            android:directBootAware="true"
+		            android:exported="false"
+		            android:initOrder="100" />
+		   <receiver
+		  android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver"
+		  android:exported="true"
+		  android:permission="com.google.android.c2dm.permission.SEND" >
+		  <intent-filter>
+		  <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+		  <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+		  <category android:name="com.burma.royal2d" />
+		  </intent-filter>
+		  </receiver>
+		    <receiver
+		  android:name="com.google.firebase.iid.FirebaseInstanceIdInternalReceiver"
+		  android:exported="false" />
+		
+		
+		  <service
+		  android:name="com.google.firebase.iid.FirebaseInstanceIdService"
+		  android:exported="true">
+		  <intent-filter android:priority="-500">
+		  <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+		  </intent-filter>
+		  </service>
+		<service
+		            android:name="com.google.firebase.messaging.FirebaseMessagingService"
+		            android:directBootAware="true"
+		            android:exported="false" >
+		            <intent-filter android:priority="-500" >
+		                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+		            </intent-filter>
+		        </service>
+		        
+		   <service android:name="anywheresoftware.b4a.objects.FirebaseNotificationsService"  android:exported="true">
+		     <intent-filter>
+		  		<action android:name="com.google.firebase.MESSAGING_EVENT"/>
+		     </intent-filter>
+		   </service>
+		<activity
+			android:windowSoftInputMode="adjustResize|stateHidden"
+			android:launchMode="singleTop"
+			android:name=".main"
+			android:label="Burma2D2025"
+			android:screenOrientation="portrait"
+			android:exported="true">
+			<intent-filter>
+			   <action android:name="android.intent.action.MAIN" />
+			   <category android:name="android.intent.category.LAUNCHER" />
+			</intent-filter>
+			
+		</activity>
+		<service
+			android:name=".starter"
+			android:exported="true">
+		</service>
+		<receiver
+			android:name=".starter$starter_BR"
+			android:exported="true">
+		</receiver>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".history"
+			android:label="Burma2D2025"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".threed"
+			android:label="Burma2D2025"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".gift_activity"
+			android:label="Burma2D2025"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<activity
+			android:windowSoftInputMode="stateHidden"
+			android:launchMode="singleTop"
+			android:name=".gift_imageview"
+			android:label="Burma2D2025"
+			android:screenOrientation="portrait"
+			android:exported="true">
+		</activity>
+		<receiver
+			android:name=".firebasemessaging"
+			android:exported="true">
+		</receiver>
+		<receiver
+			android:name=".httputils2service"
+			android:exported="true">
+		</receiver>
+	</application>
+</manifest>

@@ -1,0 +1,726 @@
+﻿Build1=Default,com.burma.royal2d
+File1=burma_bg.png
+File2=burma2d_logo.png
+File3=giftbtn.png
+File4=MainPage.bal
+File5=roboto-light.ttf
+File6=Roboto-Regular.ttf
+FileGroup1=Default Group
+FileGroup2=Default Group
+FileGroup3=Default Group
+FileGroup4=Default Group
+FileGroup5=Default Group
+FileGroup6=Default Group
+Group=Default Group
+Library1=b4xpages
+Library10=phone
+Library11=runtimepermissions
+Library12=stringutils
+Library13=amir_glide
+Library2=cardview
+Library3=core
+Library4=firebaseadmob2
+Library5=firebaseanalytics
+Library6=firebasenotifications
+Library7=javaobject
+Library8=json
+Library9=okhttputils2
+ManifestCode='This code will be applied to the manifest file during compilation.~\n~'You do not need to modify it in most cases.~\n~'See this link for for more information: https://www.b4x.com/forum/showthread.php?p=78136~\n~AddManifestText(~\n~<uses-sdk android:minSdkVersion="21" android:targetSdkVersion="34"/>~\n~<supports-screens android:largeScreens="true" ~\n~    android:normalScreens="true" ~\n~    android:smallScreens="true" ~\n~    android:anyDensity="true"/>)~\n~SetApplicationAttribute(android:icon, "@drawable/icon")~\n~SetApplicationAttribute(android:label, "$LABEL$")~\n~~\n~CreateResourceFromFile(Macro, Themes.LightTheme)~\n~SetApplicationAttribute(android:usesCleartextTraffic, "true")~\n~~\n~~\n~~\n~SetActivityAttribute(main, android:windowSoftInputMode, adjustResize|stateHidden)~\n~CreateResourceFromFile(Macro, Core.NetworkClearText)~\n~SetApplicationAttribute(android:networkSecurityConfig, @xml/network_security_config)~\n~CreateResource(xml, network_security_config.xml,~\n~<network-security-config>~\n~<base-config cleartextTrafficPermitted="true">~\n~    <trust-anchors>~\n~        <certificates src="system" />~\n~    </trust-anchors>~\n~</base-config>~\n~</network-security-config>~\n~~\n~)~\n~~\n~~\n~AddApplicationText(~\n~	<activity android:name="com.google.android.gms.common.api.GoogleApiActivity"~\n~                  android:theme="@android:style/Theme.Translucent.NoTitleBar"~\n~                  android:exported="false"/>~\n~	 <meta-data~\n~            android:name="com.google.android.gms.version"~\n~            android:value="@integer/google_play_services_version" />~\n~)~\n~AddPermission(android.permission.INTERNET)~\n~AddPermission(android.permission.WAKE_LOCK)~\n~AddPermission(com.google.android.c2dm.permission.RECEIVE)~\n~AddPermission(${applicationId}.permission.C2D_MESSAGE)~\n~~\n~CreateResourceFromFile(Macro, FirebaseAnalytics.GooglePlayBase)~\n~CreateResourceFromFile(Macro, FirebaseAdMob.FirebaseAds)~\n~AddReplacement($ADMOB_APP_ID$, ca-app-pub-3940256099942544~3347511713)~\n~'CreateResourceFromFile(Macro, FirebaseAuth.FirebaseAuth)~\n~~\n~CreateResourceFromFile(Macro, FirebaseAnalytics.Firebase)~\n~CreateResourceFromFile(Macro, FirebaseAnalytics.FirebaseAnalytics)~\n~CreateResourceFromFile(Macro, FirebaseNotifications.FirebaseNotifications)~\n~~\n~'End of default text.~\n~
+Module1=AdsHelper
+Module2=B4XMainPage
+Module3=FirebaseMessaging
+Module4=gift_activity
+Module5=gift_imageview
+Module6=history
+Module7=mycode
+Module8=Starter
+Module9=threed
+NumberOfFiles=6
+NumberOfLibraries=13
+NumberOfModules=9
+Version=13.1
+@EndOfDesignText@
+#Region  Project Attributes 
+	#ApplicationLabel: Burma2D2025
+	#VersionCode: 2
+	#VersionName: 1.0.2
+	#MultiDex: true
+	'SupportedOrientations possible values: unspecified, landscape or portrait.
+	#SupportedOrientations: portrait
+	#CanInstallToExternalStorage: False
+#End Region
+
+#Region  Activity Attributes 
+	#FullScreen: False
+	#IncludeTitle: false
+#End Region
+#AdditionalJar: com.google.android.ump:user-messaging-platform
+'#BridgeLogger: True
+#BridgeLogger: true
+
+Sub Process_Globals
+Dim mipnheingt As Int
+ Dim bannerheight As Int 
+ Dim bannertop As Int
+ Dim histroyact As String ="history"
+ Dim threedact As String = "threed"
+ Dim changetimer As Timer
+	Dim site As String = "http://54.251.182.170/"
+	Dim inforeader As String = "inforeader"
+	Dim callable As Boolean = True
+	Dim livereader As String = "livereader"
+	Dim changelean As Boolean = False
+	Dim isAdReceive As Boolean = False
+	Dim nextactivity As String
+	Dim isCLosed As Boolean 
+	Dim navpanelheight As Int 
+	Dim fbi As FirebaseAnalytics
+	Dim isCall As Boolean
+End Sub
+
+Sub Globals
+	Dim logo As ImageView
+	Dim mitimelb As Label
+	Dim modernlb,internetlb As Label
+	Dim pn As Panel
+		Dim banner As AdView
+		Dim versionlb As Label
+		Dim morningresultlb,eveningresultlb As Label
+		Dim barpn,livepn As Panel
+		Dim livelb As Label
+		Dim timelb As Label
+		Dim morningresultpn,eveningresultpn As Panel
+		Dim mdevider,edevider As Panel
+		Dim mtimelb,etimelb As Label
+		Dim splashscreen As Panel
+		Dim mainscv As ScrollView
+		Dim inter As InterstitialAd
+End Sub
+
+Sub Activity_Create(FirstTime As Boolean)
+	DateTime.SetTimeZone(6.5)
+	Wait For (CheckAndRequestNotificationPermission) Complete (HasPermission As Boolean)
+	If HasPermission = False Then
+		Log("no permission")
+		ToastMessageShow("no permission", True)
+	End If
+	
+	Dim glide As Amir_Glide
+	
+	
+	Dim job As HttpJob
+	job.Initialize(inforeader,Starter)
+	job.Download(site&"read.php?name=info.txt")
+	Dim jb As HttpJob
+	jb.Initialize("prelive",Starter)
+	jb.Download(site&"live.php")
+	
+	fbi.Initialize
+	fbi.SendEvent("login", CreateMap ("additional parameter": 100))
+	CallSubDelayed2(FirebaseMessaging, "SubscribeToTopics", Array("general"))
+	
+	mycode.SETnavigationcolor
+	
+	Activity.Color=0xFF241A32
+	
+	mainscv.Initialize(1000dip)
+	Activity.AddView(mainscv,0,0,100%x,100%y-(navpanelheight))
+	
+	barpn.Initialize("")
+	mainscv.Panel.AddView(barpn,0,0,100%x,25%y)
+	Dim bd As BitmapDrawable
+	bd.Initialize(LoadBitmap(File.DirAssets,"burma_bg.png"))
+	barpn.Background=bd
+	
+	Dim titlelb  As Label
+	titlelb.Initialize("")
+	barpn.AddView(titlelb,10dip,10dip,100%x-20dip,50dip)
+	titlelb.Text="Burma 2D"
+	titlelb.Typeface=Typeface.DEFAULT_BOLD
+	titlelb.TextColor=Colors.White
+	titlelb.TextSize =25
+	Dim su As StringUtils
+	titlelb.Height=su.MeasureMultilineTextHeight(titlelb,titlelb.Text)
+	
+	
+	livepn.Initialize("")
+	livepn.Elevation=10dip
+	barpn.AddView(livepn,0,70dip,100dip,100dip)
+	Dim cd As ColorDrawable
+	cd.Initialize(0xEC842F46,180dip)
+	livepn.Background=cd
+	
+	livelb.Initialize("")
+	livelb.TextColor=Colors.White
+	livelb.TextSize=45
+	livelb.Gravity=Gravity.CENTER             
+	livelb.Text="25"
+	livelb.Typeface=Typeface.DEFAULT_BOLD
+	livepn.AddView(livelb,10dip,10dip,livepn.Width-20dip,livepn.Height-20dip)
+	Dim su As StringUtils
+	livelb.Height=su.MeasureMultilineTextHeight(livelb,livelb.Text)
+	livelb.Width=livelb.Height
+	livepn.Height=livelb.Height+20dip
+	livepn.Width=livelb.Height+20dip
+	livepn.Left=(100%x-livepn.Width)/2
+	barpn.Height=livepn.Height+livepn.Top+20dip
+	
+	timelb.Initialize("")
+	'Chr(0xF00C)
+	timelb.Gravity=Gravity.CENTER
+	timelb.Text = timecsbuilder(Chr(0xF1DA),"-----------")
+	mainscv.Panel.AddView(timelb,0,barpn.Height+barpn.Top+5dip,100%x,10dip)
+	Dim su As StringUtils
+	timelb.Height=su.MeasureMultilineTextHeight(timelb,timecsbuilder(Chr(0xF1DA),"-----------"))
+	
+	
+	'Morning................"
+	morningresultpn.Initialize("")
+	
+	morningresultpn.Elevation = 10dip
+	Dim cd As ColorDrawable
+	cd.Initialize(0xFF842F46,14dip)
+	morningresultpn.Background=cd
+	Dim w As Int = (100%x-30dip)/2
+	mainscv.Panel.AddView(morningresultpn,10dip,timelb.Height+timelb.Top+10dip,w,50dip)
+	
+	mtimelb.Initialize("")
+	mdevider.Initialize("")
+	morningresultpn.AddView(mtimelb,0,5dip,morningresultpn.Width,20dip)
+	mtimelb.Gravity=Gravity.CENTER
+	mtimelb.Text=timecsb("12:01",Chr(0xF185),"PM")
+	Dim su As StringUtils
+	mtimelb.Height=su.MeasureMultilineTextHeight(mtimelb,timecsb("12:01 PM",Chr(0xF185),"PM"))
+	morningresultpn.AddView(mdevider,10dip,mtimelb.Height+mtimelb.Top+5dip,morningresultpn.Width-20dip,1dip)
+	mdevider.Color=Colors.Gray
+	
+	morningresultlb.Initialize("")
+	morningresultpn.AddView(morningresultlb,10dip,mdevider.Height+mdevider.Top+2dip,morningresultpn.Width-20dip,50dip)
+	morningresultlb.Gravity=Gravity.CENTER
+	morningresultlb.Text=resultscs("----.--","----.--","----.--")
+	Dim su As StringUtils
+	morningresultlb.Height=su.MeasureMultilineTextHeight(morningresultlb,resultscs("1245.12","31465.88","25"))
+	morningresultpn.Height=morningresultlb.Height+morningresultlb.Top+5dip
+	
+	'evening..................................
+	eveningresultpn.Initialize("")
+	eveningresultpn.Elevation =10dip
+	Dim cd As ColorDrawable
+	cd.Initialize(0xFF842F46,14dip)
+	eveningresultpn.Background=cd
+	Dim w As Int = (100%x-30dip)/2
+	mainscv.Panel.AddView(eveningresultpn,morningresultpn.Width+morningresultpn.Left+10dip,morningresultpn.Top,w,50dip)
+	
+	etimelb.Initialize("")
+	edevider.Initialize("")
+	eveningresultpn.AddView(etimelb,0,5dip,eveningresultpn.Width,20dip)
+	etimelb.Gravity=Gravity.CENTER
+	etimelb.Text=timecsb("4:30",Chr(0xF186),"PM")
+	Dim su As StringUtils
+	etimelb.Height=su.MeasureMultilineTextHeight(etimelb,timecsb("12:01 PM",Chr(0xF185),"PM"))
+	eveningresultpn.AddView(edevider,10dip,etimelb.Height+etimelb.Top+5dip,eveningresultpn.Width-20dip,1dip)
+	edevider.Color=Colors.Gray
+	
+	eveningresultlb.Initialize("")
+	eveningresultpn.AddView(eveningresultlb,10dip,edevider.Height+edevider.Top+2dip,eveningresultpn.Width-20dip,50dip)
+	eveningresultlb.Gravity=Gravity.CENTER
+	eveningresultlb.Text=resultscs("----.--","----.--","--")
+	Dim su As StringUtils
+	eveningresultlb.Height=su.MeasureMultilineTextHeight(eveningresultlb,resultscs("1245.12","31465.88","25"))
+	eveningresultpn.Height=eveningresultlb.Height+eveningresultlb.Top+5dip
+	bannertop = eveningresultpn.Height+eveningresultpn.Top+10dip
+	
+	If banner.IsInitialized Then
+		If isAdReceive =True Then
+			Dim l As Int = (100%x-300dip)/2
+			mainscv.Panel.AddView(banner,l,bannertop,300dip,250dip)
+			bannerheight=250dip
+		End If
+		Else
+		banner.Initialize2("banner","ca-app-pub-3940256099942544/6300978111",banner.SIZE_IAB_MRECT)
+		banner.LoadAd
+		
+	End If
+	
+	
+	pn.Initialize("")
+	pn.Elevation=10dip
+	pn.Background=mycode.btnbg2
+	
+	mainscv.Panel.AddView(pn,10dip,bannertop+bannerheight+10dip,100%x-20dip,100dip)
+	
+	modernlb.Initialize("")
+	internetlb.Initialize("")
+	Dim w As Int = (100%x-40dip)/2
+	mitimelb.Initialize("")
+	pn.AddView(mitimelb,10dip,10dip,w,20dip)
+	mitimelb.Text=mycode.mitimecs
+	Dim su As StringUtils
+	mitimelb.Height=su.MeasureMultilineTextHeight(mitimelb,mycode.mitimecs)
+	
+	pn.AddView(modernlb,w,10dip,w/2,20dip)
+	modernlb.Text=mycode.moderninernetcs("---","---","MODERN")
+	Dim su As StringUtils
+	modernlb.Height=su.MeasureMultilineTextHeight(modernlb,mycode.moderninernetcs("---","---","INTERNET"))
+	
+	pn.AddView(internetlb,modernlb.Left+modernlb.Width+10dip,10dip,w/2,20dip)
+	internetlb.Text=mycode.moderninernetcs("---","---","INTERNET")
+	internetlb.Height = modernlb.Height
+	modernlb.Gravity=Gravity.CENTER
+	internetlb.Gravity=Gravity.CENTER
+	pn.Height=internetlb.Height+20dip
+	mipnheingt = pn.Height
+	
+	mainscv.Panel.Height=pn.Height+pn.Top+10dip
+	
+	Activity.AddView(navigationbar,0,(100%y-navpanelheight),100%x,navpanelheight+20dip)
+	
+	
+	splashscreen.Initialize("")
+	splashscreen.Color=0xFF842F46
+	Activity.AddView(splashscreen,0,0,100%x,100%y)
+	versionlb.Initialize("")
+	splashscreen.AddView(versionlb,0,100%y-50dip,100%x,20dip)
+	versionlb.Text=Application.VersionName
+	versionlb.TextColor=Colors.White
+	versionlb.Gravity=Gravity.CENTER
+	Dim tlogo As Int = (100%y-50dip)/2
+	Dim llogo As Int = (100%x-50dip)/2
+
+	logo.Initialize("")
+	splashscreen.AddView(logo,llogo,tlogo,50dip,50dip)
+	logo.SetBackgroundImage(LoadBitmap(File.DirAssets,"burma2d_logo.png"))
+	logo.Gravity=Gravity.FILL
+	
+	
+		
+	change
+	
+	changetimer.Initialize("changetimer",1000)
+	changetimer.Enabled=True
+	
+	ADConsent
+End Sub
+
+'Template version: B4A-1.01
+#Region Delegates
+
+Sub Activity_ActionBarHomeClick
+	
+End Sub
+
+
+Sub banner_ReceiveAd
+	Log("Adview received")
+	banner.RemoveView
+	bannerheight = 250dip
+	pn.RemoveView
+	mainscv.Panel.AddView(banner,(100%x-300dip)/2,bannertop,300dip,bannerheight)
+	
+	mainscv.Panel.AddView(pn,10dip,bannerheight+bannertop+5dip,100%x-20dip,mipnheingt)
+	Log(bannertop & "==========banner top")
+	Log(bannerheight & "============banner height")
+	Log(pn.Top & "======== pntop")
+	Dim scvheiht As Int
+	scvheiht  = mipnheingt+250dip+bannertop
+	mainscv.Panel.Height=scvheiht+100dip
+	isAdReceive=True
+End Sub
+
+Sub banner_FailedToReceiveAd (ErrorCode As String)
+	isAdReceive=False
+	Log("Failed: " & ErrorCode)
+End Sub
+
+Sub Activity_KeyPress (KeyCode As Int) As Boolean
+	
+End Sub
+
+Sub Activity_Resume
+	Dim jb As HttpJob
+	jb.Initialize(livereader,Starter)
+	jb.Download(site&"live.php")
+	change
+	isCall=True
+	
+	If inter.IsInitialized Then
+		If  inter.Ready = False Then
+			inter.LoadAd
+		End If
+		
+		Else
+		inter.Initialize("inter","ca-app-pub-3940256099942544/1033173712")
+		inter.LoadAd
+	
+	End If
+	
+	callable=True
+	
+	If banner.IsInitialized Then
+		If isAdReceive =True Then
+			bannerheight =250dip
+			Else
+				bannerheight = 0
+				banner.LoadAd
+		End If
+	End If
+	
+	If isCLosed = False Then
+		Else
+		If pn.IsInitialized Then
+					
+			pn.RemoveView
+			
+			mainscv.Panel.AddView(pn,10dip,bannerheight+bannertop+5dip,100%x-20dip,mipnheingt)
+			mainscv.Panel.Height=mipnheingt+250dip+bannertop+10dip
+		End If
+	End If
+	
+End Sub
+
+Sub Activity_Pause (UserClosed As Boolean)
+	isCall=False
+	callable=False
+	If UserClosed =False Then
+		isCLosed = False
+		Log("Userclose "&UserClosed)
+		Else
+		Log("userclose true")
+			isCLosed=True
+	End If
+End Sub
+
+Sub Activity_PermissionResult (Permission As String, result As Boolean)
+	
+End Sub
+
+Sub Create_Menu (Menu As Object)
+	
+End Sub
+
+#if Java
+public boolean _onCreateOptionsMenu(android.view.Menu menu) {
+	 processBA.raiseEvent(null, "create_menu", menu);
+	 return true;
+	
+}
+#End If
+#End Region
+
+'Program code should go into B4XMainPage and other pages.
+
+Sub resultscs (set As String, value As String,twod As String) As CSBuilder
+	Dim sett As String
+	Dim setresult As String
+	Dim valuel As String
+	Dim valuer As String
+	Dim valueresult As String
+	
+	If set.Length >0 Then
+		setresult = set.SubString(set.Length-1)
+		sett  = set.SubString2(0,set.Length-1)
+	End If
+	If value.Length>0 Then
+		valuel = value.SubString(value.IndexOf("."))
+		valuer = value.Replace(valuel,"")
+		valueresult = valuer.SubString(valuer.Length-1)
+		valuer = valuer.SubString2(0,valuer.Length-1)
+	End If
+	
+	Dim  cs As CSBuilder
+	cs.Initialize
+	Dim cs1 As CSBuilder
+	cs1.Initialize
+	Dim tfthin As Typeface = Typeface.LoadFromAssets("roboto-light.ttf")
+	cs.Size(30).Bold.Color(Colors.White).Append(twod&CRLF).Pop
+	cs.Size(18).Typeface(tfthin).Color(Colors.White).Append(sett).Pop
+	cs.Size(18).Typeface(tfthin).Color(Colors.Yellow).Append(setresult&CRLF).Pop
+	cs.Size(18).Typeface(tfthin).Color(Colors.White).Append(valuer).Pop
+	cs.Size(18).Typeface(tfthin).Color(Colors.Yellow).Append(valueresult).Pop
+	cs.Size(18).Typeface(tfthin).Color(Colors.White).Append(valuel).PopAll
+	
+	
+	Return cs
+End Sub
+
+Sub timecsb (time As String,icon As String,ampm As String) As CSBuilder
+	Dim  cs As CSBuilder
+	cs.Initialize
+	cs.Typeface(Typeface.FONTAWESOME).Size(17).Color(Colors.White).Append(icon&" ").Pop
+	cs.Typeface(Typeface.DEFAULT_BOLD).Size(17).Color(Colors.White).Append(time&" ")
+	cs.Typeface(Typeface.DEFAULT_BOLD).Size(17).Color(Colors.White).Append(ampm).PopAll
+	Return cs
+End Sub
+
+Sub changetimer_tick
+	changetimer.Enabled=False
+	DateTime.DateFormat="yyyy/MM/dd"
+	If changelean =True Then
+		If DateTime.TimeParse("09:20:00") <(DateTime.Now) And DateTime.TimeParse("12:01:00") > (DateTime.Now) Then
+	
+			livelb.Text="--"
+			morningresultlb.Text = resultscs("----.--","-----.--","--")
+			Sleep(500)
+		else If DateTime.TimeParse("13:50:00") <(DateTime.Now) And DateTime.TimeParse("16:30:00") > (DateTime.Now) Then
+
+			
+			livelb.Text="--"
+			eveningresultlb.Text = resultscs("----.--","-----.--","--")
+			Sleep(500)
+		End If
+
+	Else
+	End If
+	changetimer.Enabled=False
+	change
+End Sub
+
+Sub timecsbuilder (icon As String,tm As String) As CSBuilder
+	Dim cs As CSBuilder
+	cs.Initialize
+	cs.Color(Colors.White).Typeface(Typeface.FONTAWESOME).Size(13).Append(icon).Pop
+	cs.Color(Colors.White).Size(13).Append("Update Time : "&tm).PopAll
+
+	Return cs
+End Sub
+
+Sub getinfo(info As String)
+
+	Dim json As JSONParser
+	json.Initialize(info)
+	Dim ls As List = json.NextArray
+	If ls.Size >0 Then
+		For i = 0 To ls.Size -1
+			Dim m As Map = ls.Get(i)
+			Dim  a As Int = m.Get("version")
+			If a > Application.VersionCode Then
+					Dim updatemsg As Label
+					updatemsg.Initialize("")
+					updatemsg.TextColor=Colors.White
+					updatemsg.Gravity=Gravity.CENTER
+					Dim cs As CSBuilder
+				cs.Initialize
+				cs.Color(Colors.White).Size(18).Typeface(Typeface.FONTAWESOME).Append(Chr(0xF0ED)).Pop
+				cs.Color(Colors.White).Size(15).Typeface(Typeface.LoadFromAssets("roboto-light.ttf")).Append(" UPDATE NOW").PopAll
+				
+					updatemsg.Text= "ပိုမိုကောင်းမွန်မြန်ဆန်သော Verison ရယူရန်"
+					Dim updatebtn As Button
+					updatebtn.Initialize("updatebtn")
+					updatebtn.Background=mycode.btnbg3
+					splashscreen.AddView(updatemsg,10dip,logo.Height+logo.Top+50dip,100%x-20dip,30dip)
+					Dim su As StringUtils
+					updatemsg.Height = su.MeasureMultilineTextHeight(updatemsg,updatemsg.Text)
+					updatebtn.Text = cs
+					updatebtn.TextColor=Colors.White
+					splashscreen.AddView(updatebtn,(100%x-150dip)/2,updatemsg.Height+updatemsg.Top+30dip,150dip,50dip)
+					
+					Else
+						splashscreen.Visible=False
+						Dim pn As Panel = navigationbar
+						pn.Elevation=10dip
+						
+			End If
+		Next
+	End If
+End Sub
+
+Sub updatebtn_click
+	Dim pi As PhoneIntents
+	StartActivity(pi.OpenBrowser("https://play.google.com/apps/details?id=com.burma.royal2d&hl=en"))
+End Sub
+
+Sub change
+	
+	Try
+		If File.Exists(File.DirInternal,"live") Then
+			Dim json As JSONParser
+			json.Initialize(File.ReadString(File.DirInternal,"live"))
+			Dim ls As List = json.NextArray
+
+			If ls.Size>0 Then
+				For i = 0 To ls.Size-1
+					Dim m As Map = ls.Get(i)
+					If m.Get("status") = "On" Then
+						timelb.Text  =timecsbuilder(Chr(0xF1DA),m.Get("updatetime"))
+						changelean = True
+					Else If m.Get("status") = "OFF" Then
+						timelb.Text  =timecsbuilder(Chr(0xF00C),m.Get("updatetime"))
+						changelean=False
+					
+					End If
+				
+					livelb.Text= m.Get("live")
+					morningresultlb.Text = resultscs(m.Get("1200set"),m.Get("1200value"),m.Get("1200"))
+					eveningresultlb.Text = resultscs(m.Get("430set"),m.Get("430value"),m.Get("430"))
+					modernlb.Text=mycode.moderninernetcs(m.Get("930modern"),m.Get("200modern"),"MODERN")
+					internetlb.Text=mycode.moderninernetcs(m.Get("930internet"),m.Get("200internet"),"INTERNET")
+				Next
+			Else
+				Sleep(1000)
+				livelb.Text= "--"
+				morningresultlb.Text = resultscs("----.--","----.--","--")
+				eveningresultlb.Text = resultscs("----.--","----.--","--")
+				modernlb.Text=mycode.moderninernetcs("---","---","MODERN")
+				internetlb.Text=mycode.moderninernetcs("---","---","INTERNET")
+			End If
+	
+			If changetimer.IsInitialized Then
+				changetimer.Enabled=True
+			End If
+		Else
+			
+		End If
+	Catch
+		Log(LastException)
+	End Try
+	
+	
+	
+	
+End Sub
+
+
+Sub navigationbar As Panel
+	Dim navigatepanel As Panel
+	Dim historybtn As Button
+	Dim giftbtn As Button
+	Dim threedbtn As Button
+	Dim chatbtn As Button
+	navigatepanel.Initialize("")
+	
+	historybtn.Initialize("histroybtn")
+	giftbtn.Initialize("giftbtn")
+	threedbtn.Initialize("threedbtn")
+	chatbtn.Initialize("chatbtn")
+	Dim w As Int
+	w = (100%x-60dip)/5
+	navigatepanel.AddView(giftbtn,10dip,5dip,w*2,w)
+	navigatepanel.AddView(historybtn,giftbtn.Width+giftbtn.Left+10dip,5dip,w,w)
+
+	navigatepanel.AddView(threedbtn,historybtn.Width+historybtn.Left+10dip,5dip,w,w)
+	navigatepanel.AddView(chatbtn,threedbtn.Width+threedbtn.Left+10dip,5dip,w,w)
+	historybtn.Text= buttoncsb(False,Chr(0xF073),True)
+	historybtn.Background=mycode.btnbg(False)
+	'giftbtn.Text =buttoncsb(False, Chr(0xF06B),True)
+	giftbtn.Color=Colors.Transparent
+	giftbtn.SetBackgroundImage(LoadBitmap(File.DirAssets,"giftbtn.png"))
+		threedbtn.Text=buttoncsb(False,"3D",False)
+	threedbtn.Background=mycode.btnbg(False)
+	chatbtn.Text= buttoncsb(False,Chr(0xF1D7),True)
+	chatbtn.Background=mycode.btnbg(False)
+	Dim cd As ColorDrawable
+	cd.Initialize(0xFF842F46,25dip)
+	navigatepanel.Background=cd
+	navpanelheight=w +10dip
+	Return navigatepanel
+End Sub
+
+Sub buttoncsb(home As Boolean,text As String,iconic As Boolean) As CSBuilder
+	Dim csb As CSBuilder
+	csb.Initialize
+	If home = True Then
+
+		csb.Color(Colors.Green).Typeface(Typeface.DEFAULT_BOLD).Size(20).Append(text).PopAll
+		Else
+			If iconic = True Then
+			If text  = Chr(0xF06B) Then
+				csb.Color(0xFFDBDBDB).Typeface(Typeface.FONTAWESOME).Size(35).Append(text).PopAll
+			Else
+				csb.Color(0xFFDBDBDB).Typeface(Typeface.FONTAWESOME).Size(20).Append(text).PopAll
+			End If
+			Else
+			
+		
+			csb.Color(0xFFDBDBDB).Typeface(Typeface.DEFAULT_BOLD).Size(20).Append(text).PopAll
+					
+			End If
+			
+	End If
+	Return csb
+End Sub
+
+Sub chatbtn_click
+	Msgbox("Chat Will Be Avaliable On Next Version","Reminder")
+End Sub
+
+
+Sub histroybtn_click
+	If inter.Ready Then
+		inter.Show
+			nextactivity = histroyact
+		Else
+		StartActivity(history)
+			
+	End If
+End Sub
+
+
+Sub threedbtn_click
+	If inter.Ready Then
+		inter.Show
+		nextactivity = threedact
+		Else
+		StartActivity(threed)
+			
+	End If
+End Sub
+
+Sub giftbtn_Click
+	StartActivity(gift_activity)
+End Sub
+
+
+
+Sub inter_ReceiveAd
+	Log("IAd received. Now wait for the right moment to show the ad.")
+	
+End Sub
+
+Sub inter_FailedToReceiveAd (ErrorCode As String)
+	Log("Failed: " & ErrorCode)
+End Sub
+
+Sub inter_AdClosed
+	Log("Closed")
+
+End Sub
+
+Sub inter_AdOpened
+	Select nextactivity
+		Case histroyact
+			StartActivity(history)
+		Case threedact
+			StartActivity(threedact)
+	End Select
+	Log("Opened")
+End Sub
+
+
+Sub ADConsent
+	Dim ads As AdsHelper
+ads.Initialize
+	If ads.GetConsentStatus = "UNKNOWN" Or ads.GetConsentStatus = "REQUIRED" Then
+		Wait For (ads.RequestConsentInformation(False)) Complete (Success As Boolean)
+	End If
+	If ads.GetConsentStatus = "REQUIRED" And ads.GetConsentFormAvailable Then
+		Wait For (ads.ShowConsentForm) Complete (Success As Boolean)
+	End If
+End Sub
+
+
+Private Sub CheckAndRequestNotificationPermission As ResumableSub
+	Dim p As Phone
+	If p.SdkVersion < 33 Then Return True
+	Dim ctxt As JavaObject
+	ctxt.InitializeContext
+	Dim targetSdkVersion As Int = ctxt.RunMethodJO("getApplicationInfo", Null).GetField("targetSdkVersion")
+	If targetSdkVersion < 33 Then Return True
+	Dim NotificationsManager As JavaObject = ctxt.RunMethod("getSystemService", Array("notification"))
+	Dim NotificationsEnabled As Boolean = NotificationsManager.RunMethod("areNotificationsEnabled", Null)
+	If NotificationsEnabled Then Return True
+	Dim rp As RuntimePermissions
+	rp.CheckAndRequest(rp.PERMISSION_POST_NOTIFICATIONS)
+	Wait For B4XPage_PermissionResult (Permission As String, Result As Boolean) 'change to Activity_PermissionResult if non-B4XPages.
+	Log(Permission & ": " & Result)
+	Return Result
+End Sub
